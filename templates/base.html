@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/form-styles.css">
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title> FlaskAPP </title>
+    {% endif %}
+</head>
+<body>
+
+
+<div id="user-nav">
+    {% if user %}
+        {% include "/base/user-navigation.html" %}
+    {% else %}
+        <a href="{{ url_for('signup') }}">Sign-up</a>
+    {% endif %}
+</div>
+
+<div id="nav">
+    {% include "/base/navigation.html" %}
+</div>
+
+{% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert-{{category}}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+{% block body %}
+    <p>This is a <b>Flask</b> application.</p>
+{% endblock %}
+
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+form {
+    margin: 0 auto 20px auto;
+    max-width: 300px;
+}
+
+legend {
+    font-size: 16pt;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+
+fieldset {
+    margin: auto;
+    border: 0px;
+}
+
+.form-line {
+    margin: 0 0 10px 0;
+    padding: 0 20px;
+}
+
+.form-label, .form-field {
+    display: block;
+}
+
+.form-field {
+    width: 100%;
+}
+
+.form-submit-line {
+    text-align: center;
+}
+

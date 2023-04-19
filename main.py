@@ -1,16 +1,30 @@
-# This is a sample Python script.
+from flask import Flask, render_template, flash, redirect, url_for
+from forms.user_forms import RegistrationForm, LoginForm
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+app = Flask(__name__)
+app.config['SECRET_KEY'] = "bad key"
+
+@app.route("/")
+def main():
+    return render_template('base.html')
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+@app.route("/login.html")
+def login():
+    form = LoginForm()
+    return render_template('login.html', title="Login", form=form)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+@app.route("/signup.html", methods=['GET', 'POST'])
+def signup():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f"Accounted created for {form.username.data}.", "success")
+        return redirect(url_for("login"))
+    return render_template('signup.html', title="SignUp", form=form)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+

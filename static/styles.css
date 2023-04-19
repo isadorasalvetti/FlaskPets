@@ -1,0 +1,62 @@
+.center-msg{
+    text-align: center;
+}
+
+.alert-success {
+    color: #fff;
+    text-align: center;
+    border-width: 1px;
+    background: #0085A1;
+    border-radius: 10px;
+    max-width: 80%;
+    padding: 10px;
+    margin: 10px auto 10px auto;
+}
+
+#user-nav {
+    background-color: #525252;
+    color: #fff;
+    margin: 0;
+    padding: 5px;
+    text-align: right;
+}
+
+#user-nav a, #user-nav a:visited {
+    font-size: 9pt;
+    color: #fff;
+}
+
+#nav {
+    background-color: #EAEAEA;
+    margin: 0 0 20px 0;
+    padding: 10px;
+    text-align: center;
+}
+
+#nav a{
+    font-size: 12pt;
+}
+
+#nav a, #user-nav a {
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#nav a:hover{
+    color: #0085A1;
+}
+
+body {
+    font-family: helvetica, sans-serif;
+}
+
+a, a:visited {
+    color: #404040;
+}
+
+b {
+    color: crimson;
+}
+
+
